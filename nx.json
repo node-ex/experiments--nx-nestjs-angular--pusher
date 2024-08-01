@@ -44,6 +44,12 @@
     }
   ],
   "targetDefaults": {
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --build --incremental {projectRoot}/tsconfig.json"
+      }
+    },
     "@angular-devkit/build-angular:application": {
       "cache": true,
       "dependsOn": ["^build"],
