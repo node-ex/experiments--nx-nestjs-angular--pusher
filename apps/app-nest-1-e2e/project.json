@@ -4,7 +4,6 @@
   "projectType": "application",
   "implicitDependencies": ["app-nest-1"],
   "targets": {
-    "type-check": {},
     "e2e": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
@@ -13,6 +12,7 @@
         "passWithNoTests": true
       },
       "dependsOn": ["app-nest-1:build"]
-    }
+    },
+    "type-check": {}
   }
 }

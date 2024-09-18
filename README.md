@@ -13,19 +13,6 @@
 
 1. `pnpm install`
 
-## Monorepo tooling
-
-This project uses Nx as a monorepo tool. If you want to run Nx commands, either use CLI `nx` command or VScode "Nx console" extension (highly recommended).
-
-```bash
-# Show Nx project/task graphs via web UI
-pnpm exec nx graph
-
-# Show affected projects for a specific target via web UI
-npx nx affected -t build --graph --base=HEAD
-# Or use Nx Console extension -> "affected --graph" command
-```
-
 ### Run the whole stack
 
 Make sure setup is completed and is up-to-date.
@@ -59,7 +46,7 @@ node ./dist/apps/app-nest-1/main.js
 pnpx serve --single ./dist/apps/app-angular-1/browser
 ```
 
-## Formatting
+### Formatting
 
 We use Prettier to format the code. To run it, use `format*` commands from `package.json` or Nx commands. Put file paths and patterns to ignore into `.prettierignore`.
 
@@ -90,7 +77,7 @@ pnpm exec nx format:check --base=HEAD
 
 VSCode "Prettier" extension is recommended to format files on save. See example `.vscode/settings.template.json` for recommended settings.
 
-## Type checking
+### Type checking
 
 We use `tsc` for type checking. To run it, use `type-check*` commands from `package.json` or Nx commands. Put file paths and patterns to ignore into an appropriate `tsconfig*.json` file.
 
@@ -116,7 +103,7 @@ pnpm exec nx affected -t type-check --base=main --head=HEAD
 pnpm exec nx affected -t type-check --base=HEAD
 ```
 
-## Linting
+### Linting
 
 We use ESLint to lint the code. To run it, use `lint*` commands from `package.json` or Nx commands. Put file paths and patterns to ignore into `.eslintignore`.
 
@@ -176,3 +163,24 @@ pnpm exec nx affected -t test --base=HEAD
 ```
 
 VSCode "Jest" and/or "Jest Runner" extensions are recommended to run the tests. See example `.vscode/settings.template.json` for recommended settings.
+
+### Monorepo tooling
+
+This project uses Nx as a monorepo tool. If you want to run Nx commands, either use CLI `nx` command or VScode "Nx console" extension (highly recommended).
+
+```bash
+# Show Nx project/task graphs via web UI
+pnpm exec nx graph
+
+# Show affected projects for a specific target via web UI
+pnpm exec nx affected -t build --graph --base=HEAD
+# Or use Nx Console extension -> "affected --graph" command
+
+# Show all projects in the current Nx workspace
+pnpm exec nx show projects
+
+# Show details about a specific project and its targets
+pnpm exec nx show project app-nest-1
+pnpm exec nx show --json project app-nest-1
+pnpm exec nx show --json project app-nest-1 | jq
+```

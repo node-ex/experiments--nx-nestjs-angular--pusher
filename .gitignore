@@ -388,3 +388,9 @@ Thumbs.db
 
 # Angular
 .angular
+
+# .env
+.env
+.env.*
+!.env.template
+!.env.*.template
