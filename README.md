@@ -1,4 +1,4 @@
-# nestjs-angular-nx--template--basic
+# template--nx-nestjs-angular--basic
 
 ## Local development
 
